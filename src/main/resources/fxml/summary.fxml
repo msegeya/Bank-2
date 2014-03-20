@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="summaryPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml" fx:controller="com.webfront.bank.controller.SummaryController">
+  <stylesheets>
+    <URL value="@summary.css" />
+  </stylesheets>
+  <AnchorPane id="Content1" minHeight="0.0" minWidth="0.0" />
+  <Label layoutX="14.0" layoutY="14.0" text="Start Date" />
+  <Label layoutX="14.0" layoutY="30.0" text="End Date" />
+  <Label layoutX="14.0" layoutY="46.0" text="Starting Balance" />
+  <Label layoutX="14.0" layoutY="110.0" text="Ending Balance" />
+  <Label layoutX="14.0" layoutY="62.0" text="Transactions" />
+  <Label layoutX="14.0" layoutY="78.0" text="Deposits" />
+  <Label layoutX="14.0" layoutY="94.0" text="Withdrawals" />
+  <Label fx:id="balance" layoutX="133.0" layoutY="110.0" text="\$0000.00" />
+  <Label fx:id="startDate" layoutX="133.0" layoutY="14.0" text="00/00/00" />
+  <Label fx:id="endDate" layoutX="133.0" layoutY="30.0" text="00/00/00" />
+  <Label fx:id="startBalance" layoutX="133.0" layoutY="46.0" text="\$0000.00" />
+  <Label fx:id="transCount" layoutX="133.0" layoutY="62.0" prefWidth="57.0" text="0000" />
+  <Label fx:id="deposits" layoutX="133.0" layoutY="78.0" text="\$0000.00" />
+  <Label fx:id="withdrawals" layoutX="133.0" layoutY="94.0" text="\$0000.00" />
+  <Label layoutX="14.0" layoutY="126.0" text="Unclassified" />
+  <Label fx:id="noPayCl" layoutX="133.0" layoutY="126.0" text="0000" />
+  <ListView id="unprocessedList" fx:id="listView" layoutX="133.0" layoutY="142.0" prefHeight="200.0" prefWidth="200.0" />
+  <Label fx:id="unprocessedStatus" layoutX="14.0" layoutY="142.0" text="Unprocessed" />
+</AnchorPane>

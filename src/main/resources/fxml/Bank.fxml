@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.webfront.bank.view.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-classpath-element /usr/java/jdk1.7.0_51/jre/lib/jfxrt.jar?>
+
+<AnchorPane id="anchorPane" prefHeight="800.0" prefWidth="1500.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.webfront.bank.controller.BankController">
+  <children>
+    <MenuBar>
+      <menus>
+        <Menu text="File" fx:id="fileMenu">
+          <items>
+            <MenuItem onAction="#doImport" text="Import" />
+            <MenuItem onAction="#doExport" text="Export" />
+            <SeparatorMenuItem />
+            <MenuItem mnemonicParsing="true" onAction="#doExit" text="Exit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <TabPane layoutX="14.0" layoutY="29.0" prefHeight="707.0" prefWidth="1474.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Summary">
+          <content>
+            <fx:include fx:id="summaryTab" source="summary.fxml" />
+          </content>
+        </Tab>
+        <Tab text="Ledger">
+          <content>
+            <AnchorPane id="Content2" minHeight="0.0" minWidth="0.0">
+              <children>
+                <TableView fx:id="tableView" editable="true" layoutX="14.0" layoutY="14.0" prefHeight="622.0" prefWidth="1450.0">
+                  <columns>
+                    <TableColumn prefWidth="70.0" text="Date" fx:id="dateColumn" />
+                    <TableColumn prefWidth="70.0" text="Check#" fx:id="checkColumn" />
+                    <TableColumn editable="true" prefWidth="615.0" text="Description" fx:id="descriptionColumn" />
+                    <TableColumn prefWidth="70.0" text="Class" fx:id="paymentClassColumn" />
+                    <TableColumn prefWidth="350.0" text="Class Description" fx:id="classDescriptionColumn" />
+                    <TableColumn prefWidth="120.0" text="Amount" fx:id="amountColumn">
+                      <cellFactory>
+                        <CellFormatter alignment="RIGHT" />
+                      </cellFactory>
+                    </TableColumn>
+                    <TableColumn prefWidth="135.0" text="Balance" fx:id="balanceColumn">
+                      <cellFactory>
+                        <CellFormatter alignment="RIGHT" />
+                      </cellFactory>
+                    </TableColumn>
+                  </columns>
+                </TableView>
+                <Button fx:id="searchButton" layoutX="1355.0" layoutY="643.0" onAction="#doSearch" text="Search" />
+                <Button fx:id="resetButton" layoutX="1255.0" layoutY="643.0" onAction="#doReset" text="Reset" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <ProgressBar fx:id="progressBar" layoutX="28.0" layoutY="775.0" prefWidth="200.0" progress="0.0" />
+  </children>
+</AnchorPane>
