@@ -197,6 +197,7 @@ public class SearchWindow {
                 } else {
                     criteria.setPaymentClass(categoryChoices.getValue().toString());
                 }
+                bankController.setCriteria(criteria);
                 stage.close();
             }
         });

@@ -447,7 +447,6 @@ public class BankController implements Initializable {
 
         @Override
         public void handle(Event event) {
-            System.out.println(event.getSource().toString());
             getLedgerTask = new Task<ObservableList<StatementEntry>>() {
                 @Override
                 protected ObservableList call() throws Exception {
